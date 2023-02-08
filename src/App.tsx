@@ -69,6 +69,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Homolog</h1>
       <button type="button" onClick={create}>
         Click
       </button>
