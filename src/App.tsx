@@ -117,7 +117,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Homolog</h1>
+      <h1>Homolog test</h1>
       <form onSubmit={submit}>
         <input type="file" accept="image/*" />
         <button type="submit">Upload</button>
