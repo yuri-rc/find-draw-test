@@ -6,8 +6,6 @@ import { useEffect } from "react";
 const { REACT_APP_PARSE_APPLICATION_ID, REACT_APP_PARSE_JAVASCRIPT_KEY } =
   process.env;
 
-console.log(REACT_APP_PARSE_APPLICATION_ID, REACT_APP_PARSE_JAVASCRIPT_KEY);
-
 const PARSE_APPLICATION_ID = REACT_APP_PARSE_APPLICATION_ID;
 const PARSE_HOST_URL = "https://parseapi.back4app.com/";
 const PARSE_JAVASCRIPT_KEY = REACT_APP_PARSE_JAVASCRIPT_KEY;
@@ -62,7 +60,8 @@ function App() {
       await Parse.User.logOut();
       const user = await Parse.User.current();
       return console.log(user);
-    } catch (error: any) {
+    } catch (error: unknown) {
+      // @ts-ignore
       alert(`Error! ${error.message}`);
       return false;
     }
