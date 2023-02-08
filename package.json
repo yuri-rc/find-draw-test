@@ -1,13 +1,14 @@
 {
   "name": "find-draw",
   "version": "0.1.0",
+  "homepage": "github-page/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
-    "@types/node": "18.13.0",
+    "@types/node": "^16.18.12",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "dotenv": "^16.0.3",
