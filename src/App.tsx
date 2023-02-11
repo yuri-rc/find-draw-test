@@ -4,7 +4,6 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 // @ts-ignore
 import Parse from "parse/dist/parse";
 import { useEffect } from "react";
-// import { ref, listAll } from "firebase/storage";
 import { storage } from "./firebaseconfig";
 
 const { REACT_APP_PARSE_APPLICATION_ID, REACT_APP_PARSE_JAVASCRIPT_KEY } =
@@ -59,6 +58,23 @@ const submit = (e: any) => {
 //   .catch((error) => {
 //     console.log(error);
 //   });
+
+const fetchData = async () => {
+  const requestOptions = {
+    method: "POST",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "content-type": "aplication/json",
+    },
+    body: JSON.stringify({
+      key: "HWQODNTK7CVXQ9I7MLNK5K96S61STKV6STLFBBYLAZ39S8AKST9Z1IXA2RG77OQ06HC2KGSWLQUYTKQLZASV2SGVK2MI0OMGGFBDP3HEK3YU2OV11829H6VQJZLL5ED2",
+      number: "5512996215829",
+      template: "<#> Seu código de verificação é: {999-999}",
+      expire: 300,
+    }),
+  };
+  await fetch("https://api.smstoken.com.br/token/v1/verify", requestOptions);
+};
 
 function App() {
   useEffect(() => {
@@ -118,6 +134,9 @@ function App() {
   return (
     <div className="App">
       <h1>Homolog test</h1>
+      <button onClick={fetchData} type="button">
+        FetcjData
+      </button>
       <form onSubmit={submit}>
         <input type="file" accept="image/*" />
         <button type="submit">Upload</button>
